@@ -1,0 +1,120 @@
+<!DOCTYPE1 html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Video - Batam TV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rasio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .card-tag {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Portofolio Karya Video Editor</h1>
+
+    <div class="portfolio-grid">
+
+        <!-- Video 1 -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/4pcSOhjhR94" title="Detak Fokus - Waswas Efisiensi Anggaran" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Detak Fokus</span>
+                <h2 class="card-title">Waswas Efisiensi Anggaran</h2>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/9Yqd77v0BTs" title="Detak Fokus - Batam Dikepung Sampah" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Detak Fokus</span>
+                <h2 class="card-title">Batam Dikepung Sampah</h2>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/mw92aZ_Mc9c" title="Sapa UMKM - Buah Naga & Lebah Kelulut" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Sapa UMKM</span>
+                <h2 class="card-title">Budi Daya Buah Naga & Madu Lebah Kelulut</h2>
+            </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/2PfgLMz-I2M" title="Kisah UMKM - Istana Jamur Cafeabilitas" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Kisah UMKM</span>
+                <h2 class="card-title">Istana Jamur Cafeabilitas</h2>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
