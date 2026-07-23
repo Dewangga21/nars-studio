@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -197,7 +197,7 @@
             letter-spacing: 1px;
         }
 
-        /* Social Media Analytics / Views Highlight Section */
+        /* Social Media Analytics / 4 Cards Section */
         .analytics-box {
             background-color: var(--bg-card);
             border: 1px solid var(--border-card);
@@ -206,97 +206,114 @@
             margin-bottom: 80px;
         }
 
-        .stats-counter {
+        .analytics-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .channel-card {
+            background: #0E0E12;
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 25px;
             display: flex;
-            gap: 40px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .stat-card {
-            border-left: 2px solid var(--text-gold);
-            padding-left: 15px;
+        .channel-card:hover {
+            border-color: var(--text-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
-        .stat-card h3 {
+        .channel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .channel-icon {
+            font-size: 32px;
+        }
+
+        .channel-icon.ig {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .channel-icon.tt {
+            color: #25F4EE;
+            text-shadow: 2px 2px 0px #FE2C55;
+        }
+
+        .channel-icon.yt {
+            color: #FF0000;
+        }
+
+        .channel-icon.overall {
+            color: var(--text-gold);
+        }
+
+        .channel-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            color: var(--text-light);
+        }
+
+        .channel-card .handle {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .channel-card .stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 32px;
             color: var(--text-gold-light);
             line-height: 1;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
-        .stat-card p {
-            font-size: 11px;
+        .channel-card .stat-label {
+            font-size: 10px;
             letter-spacing: 2px;
             color: var(--text-muted);
             text-transform: uppercase;
         }
 
-        .analytics-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+        .card-action-btn {
             margin-top: 20px;
-        }
-
-        .mockup-card {
-            background: #0E0E12;
-            border: 1px solid var(--border-card);
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .mockup-card:hover {
-            border-color: var(--text-gold);
-        }
-
-        .mockup-header {
-            padding: 15px 20px;
-            border-bottom: 1px solid var(--border-card);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
+            padding: 8px 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            font-size: 10px;
+            letter-spacing: 2px;
             font-weight: 600;
-        }
-
-        .mockup-img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 380px;
-            background-color: #000;
+            text-align: center;
+            color: var(--text-gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-
-        /* Styling gambar screenshot portofolio penonton */
-        .mockup-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        .view-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(10, 10, 12, 0.85);
-            border: 1px solid var(--text-gold);
-            backdrop-filter: blur(5px);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-gold-light);
-            display: flex;
-            align-items: center;
             gap: 6px;
+            transition: 0.3s;
+        }
+
+        .channel-card:hover .card-action-btn {
+            background: var(--text-gold);
+            color: var(--bg-obsidian);
+            border-color: var(--text-gold);
         }
 
         /* Selected Works Grid */
@@ -494,7 +511,6 @@
             .hero h1 { font-size: 2.2rem; }
             .hero-role { font-size: 12px; letter-spacing: 2px; }
             footer { flex-direction: column; text-align: center; }
-            .stats-counter { gap: 20px; }
         }
     </style>
 </head>
@@ -540,7 +556,7 @@
         <!-- Skills Section -->
         <section id="skills" class="skills-container">
             <h2 class="section-header" style="margin-bottom: 10px;">SKILLS & COMPETENCIES</h2>
-            <p style="font-size: 13px; color: var(--text-muted);">Aplikasi dan software profesional yang dikuasai untuk produksi visual & broadcast:</p>
+            <p style="font-size: 13px; color: var(--text-muted);">Professional tools and software mastered for visual & broadcast production:</p>
 
             <div class="skills-grid">
                 <div class="skill-item">
@@ -574,55 +590,80 @@
             </div>
         </section>
 
-        <!-- Social Media Analytics & Views Section -->
+        <!-- Social Media Analytics & Direct Channels (4 Cards) -->
         <section id="analytics" class="analytics-box">
-            <h2 class="section-header" style="margin-bottom: 15px;">AUDIENCE REACH & VIDEO VIEWS</h2>
-            
-            <div class="stats-counter">
-                <div class="stat-card">
-                    <h3>114K+</h3>
-                    <p>Highest Reel Views</p>
-                </div>
-                <div class="stat-card">
-                    <h3>500K+</h3>
-                    <p>Total Digital Reach</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Broadcast</h3>
-                    <p>Batam TV Newsroom</p>
-                </div>
-            </div>
+            <h2 class="section-header" style="margin-bottom: 10px;">SOCIAL MEDIA CHANNELS & AUDIENCE REACH</h2>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 25px;">Direct access to official channels and performance overview:</p>
 
-            <div class="analytics-preview-grid">
-                <!-- Mockup Card 1: Instagram Reel Highlight -->
-                <div class="mockup-card">
-                    <div class="mockup-header">
-                        <span><i class="fa-brands fa-instagram gold-text"></i> INSTAGRAM REELS</span>
-                        <span class="gold-text">@dickydwngga_</span>
-                    </div>
-                    <div class="mockup-img-wrapper">
-                        <!-- Ganti URL gambar di bawah dengan path gambar Anda, misalnya: images/ig-views.jpg -->
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80" alt="Instagram Reels Views Analytics">
-                        <div class="view-badge">
-                            <i class="fa-solid fa-eye"></i> 114,000+ VIEWS
+            <div class="analytics-grid-4">
+                
+                <!-- 1. Instagram Personal -->
+                <a href="https://instagram.com/dickydwngga_" target="_blank" class="channel-card">
+                    <div>
+                        <div class="channel-header">
+                            <h3>Instagram Reels</h3>
+                            <i class="fa-brands fa-instagram channel-icon ig"></i>
                         </div>
+                        <p class="handle">@dickydwngga_</p>
+                        <div class="stat-number">114K+</div>
+                        <div class="stat-label">Highest Reel Views</div>
+                    </div>
+                    <div class="card-action-btn">
+                        <span>VISIT INSTAGRAM</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 2. TikTok Redaksi Batam TV -->
+                <a href="https://www.tiktok.com/@redaksi.batam.tv?_r=1&_t=ZS-98GJTc6aDq8" target="_blank" class="channel-card">
+                    <div>
+                        <div class="channel-header">
+                            <h3>TikTok Channel</h3>
+                            <i class="fa-brands fa-tiktok channel-icon tt"></i>
+                        </div>
+                        <p class="handle">@redaksi.batam.tv</p>
+                        <div class="stat-number">Trending</div>
+                        <div class="stat-label">News & Viral Content</div>
+                    </div>
+                    <div class="card-action-btn">
+                        <span>VISIT TIKTOK</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 3. YouTube Redaksi Batam TV -->
+                <a href="https://www.youtube.com/@redaksibatamtv3138" target="_blank" class="channel-card">
+                    <div>
+                        <div class="channel-header">
+                            <h3>YouTube Broadcast</h3>
+                            <i class="fa-brands fa-youtube channel-icon yt"></i>
+                        </div>
+                        <p class="handle">@redaksibatamtv3138</p>
+                        <div class="stat-number">Broadcast</div>
+                        <div class="stat-label">Documentary & News</div>
+                    </div>
+                    <div class="card-action-btn">
+                        <span>VISIT YOUTUBE</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+
+                <!-- 4. Total Reach Summary -->
+                <div class="channel-card" style="cursor: default;">
+                    <div>
+                        <div class="channel-header">
+                            <h3>Total Reach</h3>
+                            <i class="fa-solid fa-chart-line channel-icon overall"></i>
+                        </div>
+                        <p class="handle">Combined Digital Performance</p>
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Cross-Platform Views</div>
+                    </div>
+                    <div class="card-action-btn" style="border-color: rgba(255,255,255,0.1); color: var(--text-muted);">
+                        <span>VERIFIED METRICS</span>
                     </div>
                 </div>
 
-                <!-- Mockup Card 2: YouTube / TV Broadcast Stream -->
-                <div class="mockup-card">
-                    <div class="mockup-header">
-                        <span><i class="fa-brands fa-youtube gold-text"></i> YOUTUBE & BROADCAST</span>
-                        <span class="gold-text">DETAK KEPRI</span>
-                    </div>
-                    <div class="mockup-img-wrapper">
-                        <!-- Ganti URL gambar di bawah dengan path gambar Anda, misalnya: images/yt-views.jpg -->
-                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80" alt="YouTube Broadcast Views">
-                        <div class="view-badge">
-                            <i class="fa-solid fa-circle-play"></i> REDAKSI BATAM TV
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -642,37 +683,37 @@
                     </a>
                     <h3 class="card-title">Creative Reel / Short Content</h3>
                     <p class="card-category gold-text">INSTAGRAM CONTENT (2026)</p>
-                    <p class="card-desc">Video Editor & Content Creator • Pengeditan video pendek interaktif dengan pacing cepat, efek visual dinamis, dan optimasi format vertikal.</p>
+                    <p class="card-desc">Video Editor & Content Creator • Short-form video editing with fast pacing, dynamic visual effects, and vertical format optimization.</p>
                 </div>
 
-                <!-- Card 2: Detak Fokus - Waswas Efisiensi Anggaran -->
+                <!-- Card 2: Detak Fokus - Budget Efficiency -->
                 <div class="card">
                     <div class="card-media">
-                        <iframe src="https://www.youtube.com/embed/4pcSOhjhR94" title="Detak Fokus - Waswas Efisiensi Anggaran" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/4pcSOhjhR94" title="Detak Fokus - Budget Efficiency Concerns" allowfullscreen></iframe>
                     </div>
-                    <h3 class="card-title">Detak Fokus — Efisiensi Anggaran</h3>
+                    <h3 class="card-title">Detak Fokus — Budget Efficiency</h3>
                     <p class="card-category gold-text">REDAKSI BATAM TV (2025)</p>
-                    <p class="card-desc">Video Editor & Producer • Editing liputan investigatif, pacing narasi cepat, dan color grading bertema dark journalism.</p>
+                    <p class="card-desc">Video Editor & Producer • Investigative news coverage editing, fast narrative pacing, and dark journalism color grading.</p>
                 </div>
 
-                <!-- Card 3: Batam Dikepung Sampah -->
+                <!-- Card 3: Batam Waste Management Issue -->
                 <div class="card">
                     <div class="card-media">
-                        <iframe src="https://www.youtube.com/embed/9Yqd77v0BTs" title="Detak Fokus - Batam Dikepung Sampah" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/9Yqd77v0BTs" title="Detak Fokus - Batam Waste Crisis" allowfullscreen></iframe>
                     </div>
-                    <h3 class="card-title">Detak Fokus — Masalah Sampah</h3>
+                    <h3 class="card-title">Detak Fokus — Waste Management Issue</h3>
                     <p class="card-category gold-text">REDAKSI BATAM TV (2025)</p>
-                    <p class="card-desc">Video Editor • Penyusunan alur laporan mendalam mengenai isu sosial lingkungan publik di Batam.</p>
+                    <p class="card-desc">Video Editor • Structural storytelling and in-depth reportage editing on public environmental issues in Batam.</p>
                 </div>
 
-                <!-- Card 4: Sapa & Kisah UMKM -->
+                <!-- Card 4: Sapa & Stories of MSMEs -->
                 <div class="card">
                     <div class="card-media">
-                        <iframe src="https://www.youtube.com/embed/mw92aZ_Mc9c" title="Sapa UMKM - Buah Naga & Lebah Kelulut" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/mw92aZ_Mc9c" title="Sapa UMKM - Dragon Fruit & Stingless Bee Honey" allowfullscreen></iframe>
                     </div>
-                    <h3 class="card-title">Sapa & Kisah UMKM</h3>
+                    <h3 class="card-title">Sapa & Stories of MSMEs</h3>
                     <p class="card-category gold-text">DOCUMENTARY SERIES (2024–2025)</p>
-                    <p class="card-desc">Producer & Video Editor • Konsep dokumenter human-interest, penyusunan alur emosional, dan penyelarasan audio-visual.</p>
+                    <p class="card-desc">Producer & Video Editor • Human-interest documentary concept, emotional narrative flow, and precise audio-visual synchronization.</p>
                 </div>
 
             </div>
