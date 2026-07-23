@@ -3,233 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Swarnawarajasa Rifky Dewangga</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>NARS Studio — Swarnawarajasa Rifky Dewangga</title>
     
+    <!-- Google Fonts: Playfair Display (Luxury Serif) & Montserrat (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
+            --bg-obsidian: #0A0A0C;
+            --bg-card: #141418;
+            --border-card: #2A2A30;
+            --text-gold: #D4AF37;
+            --text-gold-light: #FDF0A6;
+            --text-light: #F4F4F6;
+            --text-muted: #88888D;
+            --gold-gradient: linear-gradient(135deg, #C5A059 0%, #FDF0A6 30%, #D4AF37 70%, #A37C3F 100%);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg-obsidian);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
+            /* Subtly patterned background grid like SVG */
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        /* Navbar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        nav .logo {
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #38bdf8;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 80vh;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 20px 60px;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+        /* Gold Gradient Text Helper */
+        .gold-text {
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            font-size: 1rem;
-        }
-
-        .hero-btns {
+        /* Navigation Bar */
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 20px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222226;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
             gap: 15px;
-        }
-
-        .btn {
-            padding: 10px 24px;
-            border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s ease;
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
+        .brand-logo .logo-mark {
+            width: 25px;
+            height: 35px;
         }
 
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+        .brand-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 6px;
         }
 
-        .btn-outline {
-            border: 2px solid #38bdf8;
-            color: #38bdf8;
-        }
-
-        .btn-outline:hover {
-            background-color: #38bdf8;
-            color: #0f172a;
-            transform: translateY(-2px);
-        }
-
-        /* Section Global */
-        section {
-            padding: 70px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--accent-color);
-            display: block;
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Grid Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .nav-links {
+            display: flex;
+            list-style: none;
             gap: 30px;
         }
 
-        /* Cards Style */
-        .info-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .info-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .timeline-item {
-            margin-bottom: 20px;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
-        }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-        }
-
-        .timeline-item .date {
-            font-size: 0.85rem;
+        .nav-links a {
             color: var(--text-muted);
-            margin-bottom: 5px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            transition: 0.3s;
         }
 
-        /* Video Section */
-        .portfolio-grid {
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 60px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .hero-role {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .hero-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--text-gold);
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+
+        /* Section Global */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Grid Layout */
+        .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 50px 40px;
         }
 
-        .video-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
+        /* Card Component */
+        .card {
+            display: flex;
+            flex-direction: column;
         }
 
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-container {
+        .card-media {
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 6px;
             overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .video-container iframe {
+        .card-media iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -238,182 +189,203 @@
             border: 0;
         }
 
-        .video-info {
-            padding: 18px;
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            font-weight: 400;
         }
 
-        .tag {
-            display: inline-block;
-            background: #e0e7ff;
-            color: var(--accent-color);
-            font-size: 0.75rem;
+        .card-category {
+            font-size: 11px;
             font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
 
-        .video-info h4 {
-            font-size: 1rem;
-            color: var(--text-dark);
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* About Section Custom */
+        .about-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 6px;
+            padding: 40px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .about-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--text-gold);
+            margin-bottom: 15px;
+        }
+
+        .about-col p, .about-col li {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .about-col ul {
+            list-style: none;
+        }
+
+        .about-col ul li::before {
+            content: "• ";
+            color: var(--text-gold);
         }
 
         /* Footer */
         footer {
-            background: var(--primary-color);
-            color: #94a3b8;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            border-top: 1px solid #222226;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
+        .footer-text {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        /* Mobile Adaptations */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.1rem; }
-            section { padding: 50px 5%; }
-            nav ul { display: none; } /* Bisa ditambahkan hamburger icon jika diperlukan */
+            .nav-links { display: none; }
+            .works-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-role { font-size: 12px; letter-spacing: 2px; }
+            footer { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Header / Navigation -->
     <nav>
-        <div class="logo">DEWANGGA.</div>
-        <ul>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#experience">Pengalaman</a></li>
-            <li><a href="#portfolio">Portofolio Video</a></li>
+        <a href="#" class="brand-logo">
+            <!-- Monogram NARS Vector -->
+            <svg class="logo-mark" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="8" height="140" fill="url(#goldGrad)" />
+                <rect x="92" y="0" width="8" height="140" fill="url(#goldGrad)" />
+                <path d="M 8 0 L 92 140 L 100 140 L 16 0 Z" fill="url(#goldGrad)" />
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#C5A059" />
+                        <stop offset="30%" stop-color="#FDF0A6" />
+                        <stop offset="70%" stop-color="#D4AF37" />
+                        <stop offset="100%" stop-color="#A37C3F" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="gold-text">NARS</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#works">WORK</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact" class="gold-text">CONTACT</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Swarnawarajasa Rifky Dewangga</h1>
-        <h3>Video Editor & Creative Producer</h3>
-        <p>Lulusan Teknik Informatika / Network Multimedia dari Politeknik Negeri Batam. Berpengalaman dalam produksi konten siaran, penyuntingan video investigasi, dokumenter UMKM, serta pembuatan aset grafis broadcast.</p>
-        <div class="hero-btns">
-            <a href="#portfolio" class="btn btn-primary"><i class="fa-solid fa-play"></i> Lihat Karya</a>
-            <a href="#experience" class="btn btn-outline">Pengalaman Saya</a>
-        </div>
+        <p class="hero-tag gold-text">PERSONAL CREATIVE STUDIO</p>
+        <h1>SWARNAWARAJASA<br>RIFKY DEWANGGA</h1>
+        <p class="hero-role">VISUAL STORYTELLER &bull; VIDEO EDITOR &bull; GRAPHIC DESIGNER</p>
+        <p class="hero-quote">"Every Story Deserves to Be Remembered."</p>
     </section>
 
-    <!-- About & Education Section -->
-    <section id="about">
-        <h2 class="section-title">Pendidikan & Keahlian</h2>
-        <div class="grid-2">
-            
-            <div class="info-card">
-                <h3><i class="fa-solid fa-graduation-cap"></i> Pendidikan</h3>
-                <div class="timeline-item">
-                    <h4>Politeknik Negeri Batam</h4>
-                    <p class="date">Multimedia & Network Engineering</p>
-                    <p>Fokus pada produksi media digital, penyiaran, serta jaringan multimedia.</p>
-                </div>
-            </div>
+    <!-- Featured Works Section -->
+    <main class="container" id="works">
+        <h2 class="section-header">SELECTED WORKS — REDAKSI BATAM TV</h2>
 
-            <div class="info-card">
-                <h3><i class="fa-solid fa-award"></i> Sertifikasi & Keahlian</h3>
-                <div class="timeline-item">
-                    <h4>Sertifikasi Profesi</h4>
-                    <p class="date">BNSP & Cisco Networking Academy</p>
-                    <p>Sertifikasi BNSP Supervisor & Sertifikasi Teknis Jaringan (Linux/Cisco).</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Software Proficiency</h4>
-                    <p>Adobe Premiere Pro, After Effects, Photoshop, Videography, Broadcast Editing.</p>
-                </div>
-            </div>
+        <div class="works-grid">
 
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" style="background-color: #f1f5f9;">
-        <h2 class="section-title">Pengalaman Kerja</h2>
-        <div class="grid-2">
-
-            <div class="info-card">
-                <h3><i class="fa-solid fa-briefcase"></i> Batam Multimedia Televisi (Batam TV)</h3>
-                <div class="timeline-item">
-                    <h4>Video Editor, Producer & Graphic Designer</h4>
-                    <p class="date">Batam, Indonesia</p>
-                    <ul>
-                        <li>Bertanggung jawab atas editing program berita investigatif (Detak Fokus) dan program dokumenter UMKM (Sapa UMKM & Kisah UMKM).</li>
-                        <li>Membuat aset visual grafis tayangan siaran langsung dan rekaman.</li>
-                        <li>Mengatur alur kerja produksi video dari pra-produksi hingga siap tayang.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h3><i class="fa-solid fa-gears"></i> Technical & Support Experience</h3>
-                <div class="timeline-item">
-                    <h4>Facility Technical Support (Internship)</h4>
-                    <p class="date">PT Varta Microbattery</p>
-                    <ul>
-                        <li>Pengalaman teknis dalam pemeliharaan fasilitas dan dukungan administrasi operasional.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2 class="section-title">Portofolio Karya Video</h2>
-        <div class="portfolio-grid">
-
-            <!-- Video 1 -->
-            <div class="video-card">
-                <div class="video-container">
+            <!-- Card 1: Detak Fokus -->
+            <div class="card">
+                <div class="card-media">
                     <iframe src="https://www.youtube.com/embed/4pcSOhjhR94" title="Detak Fokus - Waswas Efisiensi Anggaran" allowfullscreen></iframe>
                 </div>
-                <div class="video-info">
-                    <span class="tag">Detak Fokus</span>
-                    <h4>Waswas Efisiensi Anggaran</h4>
-                </div>
+                <h3 class="card-title">Detak Fokus</h3>
+                <p class="card-category gold-text">INVESTIGATIVE SERIES (2025)</p>
+                <p class="card-desc">Video Editor & Producer • Editing liputan investigatif, pacing narasi cepat, dan color grading bertema dark journalism.</p>
             </div>
 
-            <!-- Video 2 -->
-            <div class="video-card">
-                <div class="video-container">
+            <!-- Card 2: Batam Dikepung Sampah -->
+            <div class="card">
+                <div class="card-media">
                     <iframe src="https://www.youtube.com/embed/9Yqd77v0BTs" title="Detak Fokus - Batam Dikepung Sampah" allowfullscreen></iframe>
                 </div>
-                <div class="video-info">
-                    <span class="tag">Detak Fokus</span>
-                    <h4>Batam Dikepung Sampah</h4>
-                </div>
+                <h3 class="card-title">Detak Fokus — Masalah Sampah</h3>
+                <p class="card-category gold-text">INVESTIGATIVE SERIES (2025)</p>
+                <p class="card-desc">Video Editor • Penyusunan alur laporan mendalam mengenai persoalan lingkungan publik di Batam.</p>
             </div>
 
-            <!-- Video 3 -->
-            <div class="video-card">
-                <div class="video-container">
+            <!-- Card 3: Sapa & Kisah UMKM -->
+            <div class="card">
+                <div class="card-media">
                     <iframe src="https://www.youtube.com/embed/mw92aZ_Mc9c" title="Sapa UMKM - Buah Naga & Lebah Kelulut" allowfullscreen></iframe>
                 </div>
-                <div class="video-info">
-                    <span class="tag">Sapa UMKM</span>
-                    <h4>Budi Daya Buah Naga & Madu Lebah Kelulut</h4>
-                </div>
+                <h3 class="card-title">Sapa & Kisah UMKM</h3>
+                <p class="card-category gold-text">DOCUMENTARY SERIES (2024–2025)</p>
+                <p class="card-desc">Producer & Video Editor • Konsep dokumenter human-interest, penyusunan alur emosional, dan penyelarasan audio-visual.</p>
             </div>
 
-            <!-- Video 4 -->
-            <div class="video-card">
-                <div class="video-container">
+            <!-- Card 4: Istana Jamur Cafeabilitas -->
+            <div class="card">
+                <div class="card-media">
                     <iframe src="https://www.youtube.com/embed/2PfgLMz-I2M" title="Kisah UMKM - Istana Jamur Cafeabilitas" allowfullscreen></iframe>
                 </div>
-                <div class="video-info">
-                    <span class="tag">Kisah UMKM</span>
-                    <h4>Istana Jamur Cafeabilitas</h4>
-                </div>
+                <h3 class="card-title">Istana Jamur Cafeabilitas</h3>
+                <p class="card-category gold-text">DOCUMENTARY SERIES (2024–2025)</p>
+                <p class="card-desc">Producer & Video Editor • Penayangan kisah inspiratif pemberdayaan dan kewirausahaan lokal.</p>
             </div>
 
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section class="container" id="about" style="padding-top: 0;">
+        <h2 class="section-header">PROFILE & BACKGROUND</h2>
+        <div class="about-box">
+            <div class="about-col">
+                <h3>Pendidikan</h3>
+                <p><strong>Politeknik Negeri Batam</strong></p>
+                <p>Jurusan Teknik Informatika — Network Multimedia</p>
+                <p>Fokus pada produksi media digital, penyiaran video, serta infrastruktur jaringan multimedia.</p>
+            </div>
+            <div class="about-col">
+                <h3>Keahlian Utama</h3>
+                <ul>
+                    <li>Video Editing & Motion Graphics</li>
+                    <li>Color Grading & Audio Mixing</li>
+                    <li>Broadcast Production Workflow</li>
+                    <li>Graphic Design & Stage Backdrop</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Swarnawarajasa Rifky Dewangga. All Rights Reserved.</p>
+    <footer id="contact">
+        <span class="footer-text">NARS STUDIO © 2026</span>
+        <span class="footer-text">BATAM, KEPULAUAN RIAU</span>
+        <span class="footer-text gold-text">DICKY.DEWANGGA2@GMAIL.COM</span>
     </footer>
 
 </body>
